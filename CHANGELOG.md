@@ -5,6 +5,51 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.0.0](https://github.com/fraefel/templify/compare/v1.6.1...v2.0.0) (2026-04-02)
+
+
+### ⚠ BREAKING CHANGES
+
+* UpdateFieldsOnOpen changed from bool to enum.
+* The else marker syntax has changed from {{else}} to {{#else}} to be consistent with other control flow markers ({{#if}}, {{#elseif}}, {{#foreach}}).
+
+### Features
+
+* add .editorconfig for consistent code style ([6b33421](https://github.com/fraefel/templify/commit/6b3342147a3ed9035cb8845ac45693dea2e98b2d)), closes [#10](https://github.com/fraefel/templify/issues/10)
+* add .NET 10 support ([#52](https://github.com/fraefel/templify/issues/52)) ([fcd29c4](https://github.com/fraefel/templify/commit/fcd29c488e1f87f0f162f4d5345d7b669a96849d))
+* add automated documentation example generator ([eb705cd](https://github.com/fraefel/templify/commit/eb705cdfe08b0cd81bc9c4134b9cf0523bb12002))
+* add custom Templify icon and branding ([#76](https://github.com/fraefel/templify/issues/76)) ([ff50e39](https://github.com/fraefel/templify/commit/ff50e39a5c448dd2d6112a9c207adf5e5fbd8fc6))
+* add DocumentProperties option for setting document metadata ([#78](https://github.com/fraefel/templify/issues/78)) ([a31038b](https://github.com/fraefel/templify/commit/a31038b55f45c2f997c9abf968d6480212625aec))
+* add elseif support for multi-branch conditionals ([#56](https://github.com/fraefel/templify/issues/56)) ([b451e0d](https://github.com/fraefel/templify/commit/b451e0d4d8a4d3c9bf09caa1de3445760a8ddb37))
+* add named iteration variable syntax for nested loops ([#63](https://github.com/fraefel/templify/issues/63)) ([b0839af](https://github.com/fraefel/templify/commit/b0839af5debc9445f37a016a7632cb090bd03872))
+* add processing warnings with report generation ([#70](https://github.com/fraefel/templify/issues/70)) ([859ec79](https://github.com/fraefel/templify/commit/859ec7966406a5b1ba64adb9a8fb1a281a19d649))
+* Add public IConditionContext interface for batch condition evaluations ([#30](https://github.com/fraefel/templify/issues/30)) ([7e31537](https://github.com/fraefel/templify/commit/7e31537ed5bb4aad7969e1511534b67626cf9445))
+* Add public IConditionEvaluator interface for standalone condition evaluation ([#29](https://github.com/fraefel/templify/issues/29)) ([951a027](https://github.com/fraefel/templify/commit/951a02731c749e09e519ca98c17baebff5164fa1))
+* Add SonarQube integration workflow ([#34](https://github.com/fraefel/templify/issues/34)) ([d4bdc1c](https://github.com/fraefel/templify/commit/d4bdc1c687726853bc3715eda0fbfcadf3fbc6c3))
+* add support for headers and footers ([#81](https://github.com/fraefel/templify/issues/81)) ([5b37abe](https://github.com/fraefel/templify/commit/5b37abe3c37f1b23f22a3157d98c125a8409e305))
+* add support for inline conditionals ([#44](https://github.com/fraefel/templify/issues/44)) ([0cf0b27](https://github.com/fraefel/templify/commit/0cf0b27ecb7d8960b7c9c3752d3bf130bba3ff0c))
+* add text replacement lookup table for HTML entities ([#65](https://github.com/fraefel/templify/issues/65)) ([1378e5c](https://github.com/fraefel/templify/commit/1378e5c5be1d40f295dc185e1b080dee8c4f0b13))
+* Add TextTemplateProcessor for email and text templating ([#38](https://github.com/fraefel/templify/issues/38)) ([08b496c](https://github.com/fraefel/templify/commit/08b496cbb61b49cf8987728f32e65015c8d77cab))
+* add UpdateFieldsOnOpen option for TOC refresh ([#68](https://github.com/fraefel/templify/issues/68)) ([8bd178e](https://github.com/fraefel/templify/commit/8bd178e46671f4b47604f07236a77b0db0bee81c))
+* change {{else}} to {{#else}} for syntax consistency ([#62](https://github.com/fraefel/templify/issues/62)) ([830963c](https://github.com/fraefel/templify/commit/830963ce34462a92ef77318efa11f52d9d4d2918))
+* implement non-boolean format specifiers ([#22](https://github.com/fraefel/templify/issues/22)) ([#82](https://github.com/fraefel/templify/issues/82)) ([a4a633c](https://github.com/fraefel/templify/commit/a4a633c53a539159cbac83503d9e1e7a7868a297))
+* preserve highlight and shading formatting in per-run placeholder replacement ([#54](https://github.com/fraefel/templify/issues/54)) ([2b633d5](https://github.com/fraefel/templify/commit/2b633d5883caf97c35f2a907d39af8897cf3a7b6))
+* support newline characters in variable values ([#57](https://github.com/fraefel/templify/issues/57)) ([08a146e](https://github.com/fraefel/templify/commit/08a146e6f9caa4db5d492f4793e196aeeb6fa68b))
+* support typographic/curly quotes in conditional expressions ([#50](https://github.com/fraefel/templify/issues/50)) ([1fd83ae](https://github.com/fraefel/templify/commit/1fd83ae9c77b6935545c1db4a3a8f61861c98cad))
+* unify equality operators and add condition validation ([#84](https://github.com/fraefel/templify/issues/84)) ([13883fc](https://github.com/fraefel/templify/commit/13883fce628244750ab0b2aaa5977f1462766f1d))
+
+
+### Bug Fixes
+
+* case-insensitive boolean comparison in ConditionalEvaluator ([#73](https://github.com/fraefel/templify/issues/73)) ([af35c50](https://github.com/fraefel/templify/commit/af35c504eba135aaacaed0b55a3599c2b1521d2b))
+* evaluate conditionals inside loops with correct context ([#59](https://github.com/fraefel/templify/issues/59)) ([#60](https://github.com/fraefel/templify/issues/60)) ([55bec89](https://github.com/fraefel/templify/commit/55bec897376d5844f74257a168eef476b63206a3))
+* prevent nested paragraphs in RepeatingConverter ([#42](https://github.com/fraefel/templify/issues/42)) ([91e6aa6](https://github.com/fraefel/templify/commit/91e6aa64cab754539543334662140349423fdc91)), closes [#41](https://github.com/fraefel/templify/issues/41)
+* resolve all nullable reference and unused field warnings ([85c62f1](https://github.com/fraefel/templify/commit/85c62f1d76b06054c047beca6c6d550fdd1d36f5))
+* sanitize invalid XML characters in template values ([#87](https://github.com/fraefel/templify/issues/87)) ([71a1fa6](https://github.com/fraefel/templify/commit/71a1fa689c24bf27c86b24a096332c7f720a2b78))
+* treat null values as valid in template validation ([#48](https://github.com/fraefel/templify/issues/48)) ([02ed1a0](https://github.com/fraefel/templify/commit/02ed1a09402539ed0f1a4e6a6f413196daacb93e))
+* Use SONAR_HOST_URL from secrets instead of variables ([#36](https://github.com/fraefel/templify/issues/36)) ([d18d895](https://github.com/fraefel/templify/commit/d18d8951aa0ccc0b2dde150ce4ed39f1f33c2742))
+* validate loop-scoped variables correctly in template validation ([#61](https://github.com/fraefel/templify/issues/61)) ([e7be292](https://github.com/fraefel/templify/commit/e7be292f3f6873b3ff7d4097b3343f30ba1e1e1a))
+
 ## [1.6.1](https://github.com/TriasDev/templify/compare/v1.6.0...v1.6.1) (2026-04-01)
 
 
